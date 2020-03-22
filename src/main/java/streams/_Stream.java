@@ -15,10 +15,15 @@ public class _Stream {
                 new Person("Alice", Gender.FEMALE)
         );
 
-        people.stream()
+        /*people.stream()
                 .map(person -> person.gender)
                 .collect(Collectors.toSet())
-                .forEach(System.out::println);
+                .forEach(System.out::println);*/
+
+        boolean containsOnlyFemales = people.stream()
+                .allMatch(person -> Gender.FEMALE.equals(person.gender));
+
+        System.out.println(containsOnlyFemales);
     }
 
     static class Person {
