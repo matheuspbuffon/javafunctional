@@ -13,9 +13,7 @@ public class CustomerValidatorService {
         return phoneNumber.startsWith("+0");
     }
 
-    private static boolean isAdult(LocalDate dob) {
-        return Period.between(dob, LocalDate.now()).getYears() > 16;
-    }
+    private static boolean isAdult(LocalDate dob) { return Period.between(dob, LocalDate.now()).getYears() > 16; }
 
     public static boolean isValid(Customer customer) {
         return isEmailValid(customer.getEmail()) &&
